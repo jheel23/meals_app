@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/pages/meals_page.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -7,7 +8,7 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem(this.id, this.title, this.color);
   void changeToMealsPage(BuildContext ctx) {
     Navigator.of(ctx)
-        .pushNamed('/meals-page', arguments: {'id': id, 'title': title}
+        .pushNamed(MealsPage.routeName, arguments: {'id': id, 'title': title}
             // MaterialPageRoute(builder: (_) {
             //   return MealsPage(this.id, this.title);
             // }),
@@ -24,7 +25,7 @@ class CategoryItem extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         decoration: BoxDecoration(
             gradient: LinearGradient(
